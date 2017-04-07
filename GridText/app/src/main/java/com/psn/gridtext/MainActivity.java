@@ -50,8 +50,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
                     @Override
                     public void run() {
                         while (true) {
-                            gridAdapter.setChangId((position + count) % count);
-                            position++;
+                            gridAdapter.setChangId(position++);
                             Message message = new Message();
                             message.what = 1;
                             handler.sendMessage(message);
@@ -60,6 +59,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
+                            if(position==count+1){
+                                position=0;
+                                break;
+                            }
+
                         }
 
                     }

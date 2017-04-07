@@ -52,9 +52,17 @@ public class GridAdapter extends BaseAdapter {
         }else{
             routeHodler = (RouteHodler) convertView.getTag();
         }
+        if(position<changId){
+            routeHodler.pointView.setImageResource(R.color.safepoint);
+        }
+
+        if(changId==count){
+            routeHodler.pointView.stopFlick();
+            routeHodler.pointView.setImageResource(R.color.safepoint);
+        }
         if(position==changId){
             routeHodler.pointView.startFlick();
-        }else{
+        }else {
             routeHodler.pointView.stopFlick();
         }
 

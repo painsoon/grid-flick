@@ -263,6 +263,7 @@ public class MyCircleImageView extends ImageView {
 
 		mBitmapShader.setLocalMatrix(mShaderMatrix);
 	}
+
 	//闪烁
 	public  void startFlick(){
 		Animation alphaAnimation = new AlphaAnimation( 1, 0 );
